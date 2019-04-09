@@ -1,0 +1,62 @@
+<html>
+<head>
+</head>
+<body>
+
+
+<div>
+<iframe src=""  sandbox="allow-popups allow-scripts allow-forms allow-pointer-lock" name="content" id="content" width="1920" marginwidth="0" height="1080" marginheight="0" scrolling="yes" frameborder="0" hspace="0" vspace="0" allowtransparency="true" application="false" align="center">  </iframe>
+</div>
+
+<!-- 
+    
+    @@@@SCRIPT Feito por Lucas Raniel.
+    Função: Trocar o conteúdo de um iframe a cada 'n' intervalos de segundos.
+ -->
+
+
+
+<script language="JavaScript" type="text/javascript">
+    var iframe = document.getElementById('content');  
+    var index = 0;
+	
+    var iframeSRC = ['http://mon02-prd-jne.ufca.edu.br/cacti/plugins/weathermap/weathermap-cacti-plugin.php?action=viewimage&id=e7c0341cc1ede7bdebd4&time=1554838815' , 'http://sentinela2.pop-ce.rnp.br/cdc/', 'https://imc.ufca.edu.br/imc/widgets/deviceOverview.jsf?cusView_symbolid=-1', 'https://imc.ufca.edu.br/imc/fault/widgets/fault_board.jsf'];
+    swapContent();
+    
+    function swapContent() 
+    {
+            iframe.setAttribute('src', iframeSRC[index]); 
+			console.log(index);
+			if(index == 0)
+			{
+				iframe.setAttribute('width', '4000');
+				iframe.setAttribute('height', '2000');
+			}
+			else if(index == 1)
+			{
+				iframe.setAttribute('width', '1920');
+				iframe.setAttribute('height', '1080');
+			}
+			else
+			{
+			
+				iframe.setAttribute('width', '1080');
+				iframe.setAttribute('height', '720');
+			
+			}
+			iframe.content = "initial-scale=1";
+            if (index >= iframeSRC.length-1)
+            {
+                index = 0;
+            }
+            else
+            {
+                index++;
+            }
+            setTimeout(swapContent, 15000);
+    }
+   
+</script>
+</body>
+
+</html>
