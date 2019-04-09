@@ -20,7 +20,7 @@
     var iframe = document.getElementById('content');  
     var index = 0;
 	
-    var iframeSRC = ['http://mon02-prd-jne.ufca.edu.br/cacti/plugins/weathermap/weathermap-cacti-plugin.php?action=viewmap&id=e7c0341cc1ede7bdebd4#zoom=20' , 'http://sentinela2.pop-ce.rnp.br/cdc/', 'https://imc.ufca.edu.br/imc/widgets/deviceOverview.jsf?cusView_symbolid=-1', 'https://imc.ufca.edu.br/imc/fault/widgets/fault_board.jsf'];
+    var iframeSRC = ['http://mon02-prd-jne.ufca.edu.br/cacti/plugins/weathermap/weathermap-cacti-plugin.php?action=viewimage&id=e7c0341cc1ede7bdebd4&time=1554838815' , 'http://sentinela2.pop-ce.rnp.br/cdc/', 'https://imc.ufca.edu.br/imc/widgets/deviceOverview.jsf?cusView_symbolid=-1', 'https://imc.ufca.edu.br/imc/fault/widgets/fault_board.jsf'];
     swapContent();
     
     function swapContent() 
@@ -53,7 +53,7 @@
             {
                 index++;
             }
-            setTimeout(swapContent, 5000);
+            setTimeout(swapContent, 15000);
     }
    
 </script>
